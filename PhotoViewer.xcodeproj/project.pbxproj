@@ -9,23 +9,36 @@
 /* Begin PBXBuildFile section */
 		A76C89BB2A9EA57A00E4F69A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A76C89BA2A9EA57A00E4F69A /* AppDelegate.swift */; };
 		A76C89BD2A9EA57A00E4F69A /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A76C89BC2A9EA57A00E4F69A /* SceneDelegate.swift */; };
-		A76C89BF2A9EA57A00E4F69A /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A76C89BE2A9EA57A00E4F69A /* ViewController.swift */; };
-		A76C89C22A9EA57A00E4F69A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A76C89C02A9EA57A00E4F69A /* Main.storyboard */; };
 		A76C89C52A9EA57A00E4F69A /* PhotoViewer.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = A76C89C32A9EA57A00E4F69A /* PhotoViewer.xcdatamodeld */; };
 		A76C89C72A9EA57B00E4F69A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A76C89C62A9EA57B00E4F69A /* Assets.xcassets */; };
 		A76C89CA2A9EA57B00E4F69A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A76C89C82A9EA57B00E4F69A /* LaunchScreen.storyboard */; };
+		A76C89D32A9EA5CB00E4F69A /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A76C89D22A9EA5CB00E4F69A /* TabBarController.swift */; };
+		A76C89D52A9EA5E600E4F69A /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A76C89D42A9EA5E600E4F69A /* MainViewController.swift */; };
+		A76C89D72A9EA5FB00E4F69A /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A76C89D62A9EA5FB00E4F69A /* DetailViewController.swift */; };
+		A76C89D92A9EA61000E4F69A /* FavoriteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A76C89D82A9EA61000E4F69A /* FavoriteViewController.swift */; };
+		A76C89DD2A9EA64100E4F69A /* Nuke in Frameworks */ = {isa = PBXBuildFile; productRef = A76C89DC2A9EA64100E4F69A /* Nuke */; };
+		A76C89E12A9EA67D00E4F69A /* PhotoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A76C89E02A9EA67D00E4F69A /* PhotoCell.swift */; };
+		A76C89E42A9EA6C100E4F69A /* Item.swift in Sources */ = {isa = PBXBuildFile; fileRef = A76C89E32A9EA6C100E4F69A /* Item.swift */; };
+		A76C89E82A9EA72100E4F69A /* NetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = A76C89E72A9EA72100E4F69A /* NetworkService.swift */; };
+		A76C89EB2A9EA75D00E4F69A /* PhotoData.swift in Sources */ = {isa = PBXBuildFile; fileRef = A76C89EA2A9EA75D00E4F69A /* PhotoData.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		A76C89B72A9EA57A00E4F69A /* PhotoViewer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PhotoViewer.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A76C89BA2A9EA57A00E4F69A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A76C89BC2A9EA57A00E4F69A /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		A76C89BE2A9EA57A00E4F69A /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		A76C89C12A9EA57A00E4F69A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		A76C89C42A9EA57A00E4F69A /* PhotoViewer.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = PhotoViewer.xcdatamodel; sourceTree = "<group>"; };
 		A76C89C62A9EA57B00E4F69A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		A76C89C92A9EA57B00E4F69A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		A76C89CB2A9EA57B00E4F69A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A76C89D22A9EA5CB00E4F69A /* TabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
+		A76C89D42A9EA5E600E4F69A /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
+		A76C89D62A9EA5FB00E4F69A /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
+		A76C89D82A9EA61000E4F69A /* FavoriteViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteViewController.swift; sourceTree = "<group>"; };
+		A76C89E02A9EA67D00E4F69A /* PhotoCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoCell.swift; sourceTree = "<group>"; };
+		A76C89E32A9EA6C100E4F69A /* Item.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Item.swift; sourceTree = "<group>"; };
+		A76C89E72A9EA72100E4F69A /* NetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkService.swift; sourceTree = "<group>"; };
+		A76C89EA2A9EA75D00E4F69A /* PhotoData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoData.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -33,6 +46,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A76C89DD2A9EA64100E4F69A /* Nuke in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -58,16 +72,86 @@
 		A76C89B92A9EA57A00E4F69A /* PhotoViewer */ = {
 			isa = PBXGroup;
 			children = (
-				A76C89BA2A9EA57A00E4F69A /* AppDelegate.swift */,
-				A76C89BC2A9EA57A00E4F69A /* SceneDelegate.swift */,
-				A76C89BE2A9EA57A00E4F69A /* ViewController.swift */,
-				A76C89C02A9EA57A00E4F69A /* Main.storyboard */,
-				A76C89C62A9EA57B00E4F69A /* Assets.xcassets */,
-				A76C89C82A9EA57B00E4F69A /* LaunchScreen.storyboard */,
+				A76C89E62A9EA70800E4F69A /* Networking */,
+				A76C89E92A9EA72E00E4F69A /* Models */,
+				A76C89D12A9EA5B100E4F69A /* View */,
+				A76C89E52A9EA6E000E4F69A /* Extensions */,
+				A76C89DA2A9EA61700E4F69A /* General */,
 				A76C89CB2A9EA57B00E4F69A /* Info.plist */,
-				A76C89C32A9EA57A00E4F69A /* PhotoViewer.xcdatamodeld */,
 			);
 			path = PhotoViewer;
+			sourceTree = "<group>";
+		};
+		A76C89D12A9EA5B100E4F69A /* View */ = {
+			isa = PBXGroup;
+			children = (
+				A76C89E22A9EA69000E4F69A /* Custom */,
+				A76C89DF2A9EA66700E4F69A /* Cells */,
+				A76C89DE2A9EA66000E4F69A /* Controllers */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		A76C89DA2A9EA61700E4F69A /* General */ = {
+			isa = PBXGroup;
+			children = (
+				A76C89BA2A9EA57A00E4F69A /* AppDelegate.swift */,
+				A76C89BC2A9EA57A00E4F69A /* SceneDelegate.swift */,
+			);
+			path = General;
+			sourceTree = "<group>";
+		};
+		A76C89DE2A9EA66000E4F69A /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				A76C89D22A9EA5CB00E4F69A /* TabBarController.swift */,
+				A76C89D42A9EA5E600E4F69A /* MainViewController.swift */,
+				A76C89D62A9EA5FB00E4F69A /* DetailViewController.swift */,
+				A76C89D82A9EA61000E4F69A /* FavoriteViewController.swift */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		A76C89DF2A9EA66700E4F69A /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				A76C89E02A9EA67D00E4F69A /* PhotoCell.swift */,
+			);
+			path = Cells;
+			sourceTree = "<group>";
+		};
+		A76C89E22A9EA69000E4F69A /* Custom */ = {
+			isa = PBXGroup;
+			children = (
+				A76C89E32A9EA6C100E4F69A /* Item.swift */,
+			);
+			path = Custom;
+			sourceTree = "<group>";
+		};
+		A76C89E52A9EA6E000E4F69A /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				A76C89C62A9EA57B00E4F69A /* Assets.xcassets */,
+				A76C89C82A9EA57B00E4F69A /* LaunchScreen.storyboard */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		A76C89E62A9EA70800E4F69A /* Networking */ = {
+			isa = PBXGroup;
+			children = (
+				A76C89E72A9EA72100E4F69A /* NetworkService.swift */,
+			);
+			path = Networking;
+			sourceTree = "<group>";
+		};
+		A76C89E92A9EA72E00E4F69A /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				A76C89C32A9EA57A00E4F69A /* PhotoViewer.xcdatamodeld */,
+				A76C89EA2A9EA75D00E4F69A /* PhotoData.swift */,
+			);
+			path = Models;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -86,6 +170,9 @@
 			dependencies = (
 			);
 			name = PhotoViewer;
+			packageProductDependencies = (
+				A76C89DC2A9EA64100E4F69A /* Nuke */,
+			);
 			productName = PhotoViewer;
 			productReference = A76C89B72A9EA57A00E4F69A /* PhotoViewer.app */;
 			productType = "com.apple.product-type.application";
@@ -114,6 +201,9 @@
 				Base,
 			);
 			mainGroup = A76C89AE2A9EA57A00E4F69A;
+			packageReferences = (
+				A76C89DB2A9EA64100E4F69A /* XCRemoteSwiftPackageReference "Nuke" */,
+			);
 			productRefGroup = A76C89B82A9EA57A00E4F69A /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -130,7 +220,6 @@
 			files = (
 				A76C89CA2A9EA57B00E4F69A /* LaunchScreen.storyboard in Resources */,
 				A76C89C72A9EA57B00E4F69A /* Assets.xcassets in Resources */,
-				A76C89C22A9EA57A00E4F69A /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -141,24 +230,23 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A76C89E82A9EA72100E4F69A /* NetworkService.swift in Sources */,
 				A76C89C52A9EA57A00E4F69A /* PhotoViewer.xcdatamodeld in Sources */,
-				A76C89BF2A9EA57A00E4F69A /* ViewController.swift in Sources */,
+				A76C89E42A9EA6C100E4F69A /* Item.swift in Sources */,
 				A76C89BB2A9EA57A00E4F69A /* AppDelegate.swift in Sources */,
+				A76C89D52A9EA5E600E4F69A /* MainViewController.swift in Sources */,
+				A76C89D32A9EA5CB00E4F69A /* TabBarController.swift in Sources */,
+				A76C89E12A9EA67D00E4F69A /* PhotoCell.swift in Sources */,
+				A76C89EB2A9EA75D00E4F69A /* PhotoData.swift in Sources */,
 				A76C89BD2A9EA57A00E4F69A /* SceneDelegate.swift in Sources */,
+				A76C89D92A9EA61000E4F69A /* FavoriteViewController.swift in Sources */,
+				A76C89D72A9EA5FB00E4F69A /* DetailViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		A76C89C02A9EA57A00E4F69A /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				A76C89C12A9EA57A00E4F69A /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		A76C89C82A9EA57B00E4F69A /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -296,9 +384,9 @@
 				INFOPLIST_FILE = PhotoViewer/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UIMainStoryboardFile = "";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -324,9 +412,9 @@
 				INFOPLIST_FILE = PhotoViewer/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UIMainStoryboardFile = "";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -362,6 +450,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		A76C89DB2A9EA64100E4F69A /* XCRemoteSwiftPackageReference "Nuke" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/kean/Nuke";
+			requirement = {
+				kind = exactVersion;
+				version = 10.8.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		A76C89DC2A9EA64100E4F69A /* Nuke */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = A76C89DB2A9EA64100E4F69A /* XCRemoteSwiftPackageReference "Nuke" */;
+			productName = Nuke;
+		};
+/* End XCSwiftPackageProductDependency section */
 
 /* Begin XCVersionGroup section */
 		A76C89C32A9EA57A00E4F69A /* PhotoViewer.xcdatamodeld */ = {
