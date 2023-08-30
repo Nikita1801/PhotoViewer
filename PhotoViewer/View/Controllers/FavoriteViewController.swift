@@ -18,6 +18,7 @@ final class FavoriteViewController: UIViewController {
     }
     
     override func viewWillAppear(_ animated: Bool) {
+        photos = CoreDataManger.shared.fetchPhotos()
         collectionView.reloadData()
     }
     
@@ -62,11 +63,6 @@ final class FavoriteViewController: UIViewController {
             collectionView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -10),
             collectionView.bottomAnchor.constraint(equalTo: view.bottomAnchor),
         ])
-    }
-    
-    public func set(photo: Photo) {
-        self.photos.append(photo)
-        print(photos.count)
     }
 }
 

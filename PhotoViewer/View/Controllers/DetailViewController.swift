@@ -9,11 +9,11 @@ import Nuke
 import UIKit
 
 final class DetailViewController: UIViewController {
-    
     private var photo    : Photo?
     private let person   = UIView.Item()
     private let location = UIView.Item()
     private let date     = UIView.Item()
+    private let alert    = UIView.Alert()
     
     private let image: UIImageView = {
         let imageView = UIImageView()
@@ -30,8 +30,14 @@ final class DetailViewController: UIViewController {
         setupUI()
         layout()
     }
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        guard let photo = photo else { return }
+        navigationItem.rightBarButtonItem?.isHidden = CoreDataManger.shared.has(photo: photo)
+    }
     
     private func setupUI() {
+        alert.alpha = 0
         view.backgroundColor = .systemBackground
         navigationItem.rightBarButtonItem = UIBarButtonItem.init(barButtonSystemItem: UIBarButtonItem.SystemItem.add, target: self, action: #selector(addPhoto))
         
@@ -39,14 +45,19 @@ final class DetailViewController: UIViewController {
         view.addSubview(person)
         view.addSubview(location)
         view.addSubview(date)
+        view.addSubview(alert)
         
-        person.translatesAutoresizingMaskIntoConstraints = false
+        person.translatesAutoresizingMaskIntoConstraints   = false
         location.translatesAutoresizingMaskIntoConstraints = false
-        date.translatesAutoresizingMaskIntoConstraints = false
+        date.translatesAutoresizingMaskIntoConstraints     = false
+        alert.translatesAutoresizingMaskIntoConstraints    = false
     }
     @objc
     private func addPhoto() {
-        
+        guard let photo = photo else { return }
+        CoreDataManger.shared.set(photo: photo)
+        CoreDataManger.shared.saveContext()
+        animate(duration: 1.5)
     }
     
     private func layout() {
@@ -67,6 +78,11 @@ final class DetailViewController: UIViewController {
             location.topAnchor.constraint(equalTo: date.bottomAnchor, constant: 8),
             location.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 16),
             location.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -16),
+            
+            alert.widthAnchor.constraint(equalTo: view.widthAnchor, multiplier: 0.5),
+            alert.heightAnchor.constraint(equalTo: alert.widthAnchor),
+            alert.centerXAnchor.constraint(equalTo: view.centerXAnchor),
+            alert.centerYAnchor.constraint(equalTo: view.centerYAnchor, constant: -64)
         ])
     }
     
@@ -78,6 +94,15 @@ final class DetailViewController: UIViewController {
         
         let url = photo.urls?.regular
         Nuke.loadImage(with: url, into: image)
+    }
+    
+    private func animate(duration: Double) {
+        navigationItem.rightBarButtonItem?.isHidden = true
+        alert.set(state: .success)
+        alert.alpha = 1
+        UIView.animate(withDuration: duration) {
+            self.alert.alpha = 0
+        }
     }
 }
 
