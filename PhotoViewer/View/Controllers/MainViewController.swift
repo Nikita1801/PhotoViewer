@@ -8,10 +8,12 @@
 import UIKit
 
 final class MainViewController: UIViewController {
-    private let network = NetworkService()
-    private let detail = DetailViewController()
-    private var photos: [Photo]?
     private let collectionInsets = UIEdgeInsets(top: 5, left: 5, bottom: 5, right: 5)
+    private let network          = NetworkService()
+    private let detail           = DetailViewController()
+    private var fetching         = false
+    private var photos: [Photo]  = []
+    private let error: NetworkError? = nil
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -50,33 +52,46 @@ final class MainViewController: UIViewController {
     private func getPhotos() {
         Task {
             do {
-                photos = try await network.getPhotos()
+                let receved = try await network.getPhotos()
+                receved.forEach { photos.append($0) }
                 collectionView.reloadData()
+                fetching = false
             } catch is NetworkError {
-                print("error")
+                dialog()
             }
         }
+    }
+    private func dialog() {
+        let alert = UIAlertController(title: "Error while loading data",
+                                      message: "Would you like to try again?",
+                                      preferredStyle: UIAlertController.Style.alert)
+        alert.addAction(UIAlertAction(title: "Try again",
+                                      style: UIAlertAction.Style.default,
+                                      handler: { _ in self.getPhotos() } ))
+        alert.addAction(UIAlertAction(title: "Close", style: UIAlertAction.Style.cancel, handler: nil))
+        self.present(alert, animated: true, completion: nil)
     }
 }
 
 // MARK: - CollectionView
 extension MainViewController: UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        photos?.count ?? 0
+        photos.count
     }
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cell", for: indexPath) as? PhotoCell, let photo = photos?[indexPath.row] else { return UICollectionViewCell() }
+        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cell", for: indexPath) as? PhotoCell else { return UICollectionViewCell() }
+        let photo = photos[indexPath.row]
         cell.set(photo: photo)
         return cell
     }
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        guard let photo = photos?[indexPath.row] else { return }
+        let photo = photos[indexPath.row]
         detail.set(photo: photo)
         navigationController?.pushViewController(detail, animated: true)
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        guard let photo = photos?[indexPath.row] else { return .zero }
+        let photo = photos[indexPath.row]
         let width = view.frame.width * 0.445
         let height = CGFloat(photo.height ?? 0) * width / CGFloat(photo.width ?? 0)
         return CGSize(width: width, height: height)
@@ -88,5 +103,17 @@ extension MainViewController: UICollectionViewDataSource, UICollectionViewDelega
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
         collectionInsets.left
+    }
+}
+
+// MARK: - Infinite scroll
+extension MainViewController: UIScrollViewDelegate {
+    func scrollViewDidScroll(_ scrollView: UIScrollView) {
+        let position = scrollView.contentOffset.y
+        let frame = scrollView.frame.size.height
+        let contentSize = scrollView.contentSize.height
+        guard (position + frame) > contentSize, !fetching else { return }
+        fetching = true
+        getPhotos()
     }
 }

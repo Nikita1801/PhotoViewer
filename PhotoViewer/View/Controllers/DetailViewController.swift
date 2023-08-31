@@ -57,7 +57,7 @@ final class DetailViewController: UIViewController {
         guard let photo = photo else { return }
         CoreDataManger.shared.set(photo: photo)
         CoreDataManger.shared.saveContext()
-        animate(duration: 1.5)
+        animate(duration: 1)
     }
     
     private func layout() {
@@ -82,7 +82,7 @@ final class DetailViewController: UIViewController {
             alert.widthAnchor.constraint(equalTo: view.widthAnchor, multiplier: 0.5),
             alert.heightAnchor.constraint(equalTo: alert.widthAnchor),
             alert.centerXAnchor.constraint(equalTo: view.centerXAnchor),
-            alert.centerYAnchor.constraint(equalTo: view.centerYAnchor, constant: -64)
+            alert.centerYAnchor.constraint(equalTo: view.centerYAnchor, constant: -32)
         ])
     }
     
@@ -100,8 +100,10 @@ final class DetailViewController: UIViewController {
         navigationItem.rightBarButtonItem?.isHidden = true
         alert.set(state: .success)
         alert.alpha = 1
-        UIView.animate(withDuration: duration) {
-            self.alert.alpha = 0
+        DispatchQueue.main.asyncAfter(deadline: .now() + duration/2) {
+            UIView.animate(withDuration: duration) {
+                self.alert.alpha = 0
+            }
         }
     }
 }

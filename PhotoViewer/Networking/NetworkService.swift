@@ -46,17 +46,4 @@ public enum NetworkError: Error {
     case invalidResponse
     case invalidData
     case unknown
-    
-    public var description: String {
-        switch self {
-        case .invalidURL:
-            return "Looks like your URL is invalid"
-        case .invalidResponse:
-            return "Invalid response"
-        case .invalidData:
-            return "Invalid server data"
-        case .unknown:
-            return "Looks like something went wrong"
-        }
-    }
 }
